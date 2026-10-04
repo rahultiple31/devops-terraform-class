@@ -1,5 +1,5 @@
 module "vpc" {
-  count  = local.deploy_connect ? 1 : 0
+  count  = local.vpc ? 1 : 0
   source = "./modules/vpc"
 
   vpc_name          = var.vpc_name
