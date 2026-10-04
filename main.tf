@@ -3,7 +3,7 @@ locals {
 }
 
 module "vpc" {
-  count  = local.vpc ? 1 : 0
+  count  = 0
   source = "./modules/vpc"
 
   vpc_name          = var.vpc_name
