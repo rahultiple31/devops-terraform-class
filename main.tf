@@ -1,3 +1,7 @@
+locals {
+  vpc = true
+}
+
 module "vpc" {
   count  = local.vpc ? 1 : 0
   source = "./modules/vpc"
