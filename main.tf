@@ -1,0 +1,19 @@
+module "vpc" {
+  source = "./modules/vpc"
+
+  vpc_name          = var.vpc_name
+  vpc_cidr_block    = var.vpc_cidr_block
+  subnet_name       = var.subnet_name
+  subnet_cidr_block = var.subnet_cidr_block
+  tags              = var.tags
+}
+
+moved {
+  from = aws_vpc.sep-vpc
+  to   = module.vpc.aws_vpc.this
+}
+
+moved {
+  from = aws_subnet.sep-pub-sub
+  to   = module.vpc.aws_subnet.this
+}
