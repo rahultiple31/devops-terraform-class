@@ -11,10 +11,10 @@ module "vpc" {
 
 moved {
   from = aws_vpc.sep-vpc
-  to   = module.vpc.aws_vpc.this
+  to   = module.vpc[0].aws_vpc.this
 }
 
 moved {
   from = aws_subnet.sep-pub-sub
-  to   = module.vpc.aws_subnet.this
+  to   = module.vpc[0].aws_subnet.this
 }
